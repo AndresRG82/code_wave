@@ -3,8 +3,7 @@ package cl.kibernum;
 import java.util.Objects;
 
 public class Cancha {
-
-  private final String nombre;
+    private final String nombre;
     private final String deporte;
     private final String horarioDisponible;
 
@@ -18,19 +17,19 @@ public class Cancha {
     public String getDeporte() { return deporte; }
     public String getHorarioDisponible() { return horarioDisponible; }
 
+    public boolean esMismaCancha(Cancha otra) {
+        return this.nombre.equals(otra.nombre) && this.deporte.equals(otra.deporte);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Cancha cancha = (Cancha) o;
-        return Objects.equals(nombre, cancha.nombre) &&
-               Objects.equals(deporte, cancha.deporte);
+        if (!(o instanceof Cancha cancha)) return false;
+        return esMismaCancha(cancha);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(nombre, deporte);
     }
-
-
 }

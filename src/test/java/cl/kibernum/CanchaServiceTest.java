@@ -1,10 +1,7 @@
 package cl.kibernum;  // o el paquete que uses
 
 import org.junit.jupiter.api.Test;
-
-
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -58,7 +55,6 @@ public class CanchaServiceTest {
 
         assertEquals("Juan", modificada.getUsuario());
     }    
-
     @Test
     void deberiaContarReservasPorDia() {
         Cancha cancha = new Cancha("Cancha 1", "Fútbol", "08:00-20:00");

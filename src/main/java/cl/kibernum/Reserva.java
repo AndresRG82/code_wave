@@ -20,4 +20,10 @@ public class Reserva {
     public LocalDate getFecha() { return fecha; }
     public LocalTime getHora() { return hora; }
     public String getUsuario() { return usuario; }
+
+    public boolean esIgual(Reserva otra) {
+        return cancha.equals(otra.cancha) &&
+               fecha.equals(otra.fecha) &&
+               hora.equals(otra.hora);
+    }
 }
